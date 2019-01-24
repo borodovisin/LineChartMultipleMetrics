@@ -1,0 +1,72 @@
+{
+  "name": "Line Trend: Multiple Metrics Update",
+  "enabled": true,
+  "controls": [
+    "UberStyle",
+    "DirtyDataIndicator",
+    "Color",
+    "FiltersIndicator",
+    "Undo",
+    "Info",
+    "TimePlayer",
+    "Rulers",
+    "Filters",
+    "Defaults",
+    "Bookmark",
+    "Sort",
+    "Zoom",
+    "NoDataIndicator",
+    "TimeTable",
+    "Share",
+    "Download"
+  ],
+  "objectFieldTypes": [
+    "NUMBER",
+    "MONEY",
+    "INTEGER"
+  ],
+  "variables": [
+    {
+      "name": "Y Axis",
+      "type": "multi-metric",
+      "attributeType": [
+        "MONEY",
+        "INTEGER",
+        "NUMBER"
+      ],
+      "defaultValue": [
+        {
+          "name": "count",
+          "colorConfig": {
+            "autoShowColorLegend": true
+          }
+        }
+      ],
+      "colorMetric": false,
+      "colorNumb": 4,
+      "metricType": "color",
+      "legendType": "palette",
+      "colorSet": "ZoomPalette",
+      "required": false
+    },
+    {
+      "name": "Trend Attribute",
+      "type": "group",
+      "attributeType": [
+        "TIME"
+      ],
+      "defaultValue": {
+        "name": "",
+        "limit": 1000,
+        "sort": {
+          "dir": "asc"
+        }
+      },
+      "colorMetric": false,
+      "colorNumb": 0,
+      "groupType": "time",
+      "required": false
+    }
+  ],
+  "templateType": "BLANK"
+}
