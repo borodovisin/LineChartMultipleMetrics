@@ -1,7 +1,7 @@
 import visualization from '../visualization.json';
 
-export const groupVariable = visualization.variables[1].name;
-export const axisVariable = visualization.variables[0].name;
+export const groupVariable = _.get(visualization, 'variables[1].name');
+export const axisVariable = _.get(visualization, 'variables[0].name');
 
 const getTableRow = (label, value, color='') => `<div class="zd_tooltip_info_table_row"><div class="zd_tooltip_info_table_row_label">${label}</div><div class="zd_tooltip_info_table_row_value">${color} ${value}</div></div>`;
 
@@ -32,8 +32,8 @@ const getMetric = params => {
 
 const getYAxisData = (data, metric) => {
     if (metric.name != visualization.variables[0].defaultValue[0].name) {
-        return data.map(datum => ({ value: datum.current.metrics[metric.name][metric.func], datum }));
-    }
+        return data.map(datum => ({ value: _.get(datum.current.metrics, `${metric.name}.${metric.func}`), datum }));
+    } 
     return data.map(datum => ({ value: datum.current.count, datum }));
 }
 
@@ -82,7 +82,8 @@ export const getSeries = (data, metric) => {
                 }
             },
             data: null,
-            animation: false,
+            animation: true,
+            silent: true,
         },
     };
 };

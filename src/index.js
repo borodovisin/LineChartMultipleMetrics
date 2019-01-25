@@ -116,7 +116,7 @@ controller.update = data => {
 controller.resize = () => line.resize();
 
 line.on('mouseover', params => {
-    option.series[params.seriesIndex].markLine.data = [{ yAxis: params.value, datum: params.data.datum }];
+    option.series[params.seriesIndex].markLine.data = [{ yAxis: params.value }];
     option.xAxis.axisPointer.lineStyle.color = params.color;
     line.setOption(option, { notMerge: true });
 });
@@ -152,5 +152,3 @@ line.on('click', params => {
         });
     }
 });
-
-console.log(controller);
