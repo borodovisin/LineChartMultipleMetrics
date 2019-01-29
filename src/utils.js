@@ -44,7 +44,7 @@ const getYAxisData = (data, metric) => {
  */
 export const SIFormat = (number, digits=0) => {
     const codeTable = ['p', 'n', 'u', 'm', '', 'k', 'M', 'G', 'T'];
-    const [exponentialNumber, exponential] = number.toExponential(digits).split('e+');
+    const [exponentialNumber, exponential] = number.toExponential(digits).split('e');
     const index = Math.floor(_.parseInt(exponential) / 3);
     return exponentialNumber * Math.pow(10, _.parseInt(exponential) - index * 3) + codeTable[index + 4];
 }

@@ -40,14 +40,11 @@ const line = echarts.init(chartContainer);
 
 const option = {
     textStyle: {
-        fontFamily: 'Source Pro, source-sans-pro,' +
-        ' Helvetica, Arial, sans-serif',
+        fontFamily: 'Source Pro, source-sans-pro, Helvetica, Arial, sans-serif',
         fontSize: '14',
-        fontWeight: 'normal',
-        fontStyle: 'normal'
     },
     grid: {
-        left: 35,
+        left: 40,
         top: 30,
         right: 35,
         bottom: 20,
