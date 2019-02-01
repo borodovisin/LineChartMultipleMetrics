@@ -27,7 +27,9 @@ controller.element.appendChild(chartContainer);
 echarts.registerProcessor(ecModel => {
     ecModel.findComponents({ mainType: 'yAxis' }).map(component => {
         const defaultSplitNumber = 5;
-        const ratio = Math.floor(component.axis.grid.getRect().height / (defaultSplitNumber * component.getTextRect('0').height));
+        const calculatedRatio = Math.floor(component.axis.grid.getRect().height / (defaultSplitNumber * component.getTextRect('0').height));
+        const ratio = calculatedRatio > defaultSplitNumber ? defaultSplitNumber : calculatedRatio;
+
         if (ratio < 1) component.option.axisLabel.show = false;
         else {
             component.option.splitNumber = ratio;
@@ -47,7 +49,7 @@ const option = {
         left: 40,
         top: 30,
         right: 35,
-        bottom: 20,
+        bottom: 30,
     },
     xAxis: {
         type: 'category',
