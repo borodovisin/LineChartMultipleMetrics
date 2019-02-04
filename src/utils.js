@@ -37,6 +37,11 @@ const getYAxisData = (data, metric) => {
     return data.map(datum => ({ value: datum.current.count, datum }));
 }
 
+export const getFont = () => ({
+    fontFamily: 'Source Pro, source-sans-pro, Helvetica, Arial, sans-serif',
+    fontSize: '14',
+})
+
 /**
  * Format number to k, M, G (thousand, Million)
  * @param {Number} number 
